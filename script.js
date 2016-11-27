@@ -20,7 +20,7 @@ function getUrl(id) {
   var searchTerm = document.getElementById(id).value;
   // var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srprop=snippet&srsearch=' + searchTerm + '&origin=*';
   // var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&srlimit=15&list=search&origin=*&srsearch=' + searchTerm + '&srprop=snippet&redirects=true';
-  var url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&origin=*&generator=search&gsrlimit=10&gsrsearch=' + searchTerm + '&prop=extracts&exintro=true&exlimit=10&explaintext=true';
+  var url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&origin=*&generator=search&gsrlimit=10&gsrsearch=' + searchTerm + '&prop=extracts&exintro=true&exlimit=10&explaintext=true&exsentences=2';
   return url;
 }
 function createList(objArr) {
