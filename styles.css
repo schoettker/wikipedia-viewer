@@ -1,0 +1,24 @@
+input {
+  background: transparent;
+  background: rgba(163, 135, 106, 0.15);
+
+  border: none;
+
+  color: #333;
+  height: 26px;
+  outline: none;
+
+  padding: .5em 1em;
+
+  transition:         all .1s linear;
+  -moz-transition:    all .1s linear;
+  -o-transition:      all .1s linear;
+  -webkit-transition: all .1s linear;
+
+  width: 185px;
+}
+
+input:focus {
+  background: transparent;
+  background: rgba(163, 135, 106, 0.2);
+}
