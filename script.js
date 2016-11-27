@@ -11,7 +11,6 @@ function retrieveData() {
 }
 function listener() {
   var response = JSON.parse(this.responseText).query.search;
-  // console.log(response);
   createList(response);
 }
 function getUrl(id) {
@@ -26,7 +25,6 @@ function createList(objArr) {
   objArr.forEach(function(object) {
     var listitem = document.createElement('li'), title = document.createElement('h5'), para = document.createElement('p');
     title.appendChild(document.createTextNode(object['title']));
-    // para.appendChild(document.createTextNode(object.snippet));
     para.innerHTML = object.snippet;
     listitem.appendChild(title);
     listitem.appendChild(para);
