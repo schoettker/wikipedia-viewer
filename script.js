@@ -10,24 +10,30 @@ function retrieveData() {
   request.send();
 }
 function listener() {
-  var response = JSON.parse(this.responseText).query.search;
-  createList(response);
+  var response = JSON.parse(this.responseText).query.pages, arr = [];
+  for (var key in response) {
+    arr.push(response[key]);
+  }
+  createList(arr);
 }
 function getUrl(id) {
   var searchTerm = document.getElementById(id).value;
   // var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srprop=snippet&srsearch=' + searchTerm + '&origin=*';
-  var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&srlimit=15&list=search&origin=*&srsearch=' + searchTerm;
+  // var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&srlimit=15&list=search&origin=*&srsearch=' + searchTerm + '&srprop=snippet&redirects=true';
+  var url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&origin=*&generator=search&gsrlimit=10&gsrsearch=' + searchTerm + '&prop=extracts&exintro=true&exlimit=10&explaintext=true';
   return url;
 }
 function createList(objArr) {
   var list = document.getElementById('list');
   list.innerHTML = null;
   objArr.forEach(function(object) {
-    var listitem = document.createElement('li'), title = document.createElement('h5'), para = document.createElement('p');
+    var listitem = document.createElement('li'), title = document.createElement('h5'), para = document.createElement('p'), link = document.createElement('a');
     title.appendChild(document.createTextNode(object['title']));
-    para.innerHTML = object.snippet;
-    listitem.appendChild(title);
-    listitem.appendChild(para);
+    para.innerHTML = object.extract;
+    link.appendChild(title);
+    link.appendChild(para);
+    link.setAttribute('href', 'https://en.wikipedia.org/?curid=' + object.pageid);
+    listitem.appendChild(link);
     list.appendChild(listitem);
   });
 }
