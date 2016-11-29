@@ -2,13 +2,18 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"/>
     <title>Wikipedia Viewer</title>
   </head>
   <body>
     <div class='container'>
+      <form>
       <input type="text" name="search" id="search" placeholder="Search Wikipedia" />
-      <button type="submit" id='button'>Search</button>
+      <div class='wrap'>
+        <button type="submit" id='button' class='button'>Search</button>
+        <button id='random' class='button'>I'm Feeling Lucky</button>
+      </div>
       </form>
       <ul id='list'>
       </ul>
