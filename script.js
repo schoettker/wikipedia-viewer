@@ -33,6 +33,7 @@ function createList(objArr) {
     link.appendChild(title);
     link.appendChild(para);
     link.setAttribute('href', 'https://en.wikipedia.org/?curid=' + object.pageid);
+    link.setAttribute('target', 'blank');
     listitem.appendChild(link);
     list.appendChild(listitem);
   });

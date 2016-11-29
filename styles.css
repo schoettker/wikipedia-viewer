@@ -36,7 +36,7 @@ input:focus {
   justify-content: space-around;
 }
 
-button {
+.button {
   margin: 2em auto;
   font-family: 'Open Sans', sans-serif;
   padding: .8em 1em;
@@ -51,8 +51,10 @@ button {
   -moz-transition:    all .1s linear;
   -o-transition:      all .1s linear;
   -webkit-transition: all .1s linear;
+  color: white;
+  text-decoration: none;
 }
-button:hover {
+.button:hover {
   background: #D96F32;
 }
 
@@ -72,7 +74,7 @@ li {
   padding: .5em 1em;
   margin: 1em auto;
 }
-a {
+li a {
   text-decoration: none;
   color: #090909;
   outline: none;
