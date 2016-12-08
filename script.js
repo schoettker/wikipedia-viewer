@@ -2,6 +2,10 @@ document.getElementById('button').addEventListener('click', function(event) {
   XHRequest();
   event.preventDefault();
 });
+document.getElementById('form').addEventListener('submit', function(event) {
+  XHRequest();
+  event.preventDefault();
+});
 function XHRequest() {
   var request = new XMLHttpRequest();
   request.open('GET', getUrl('search'));
