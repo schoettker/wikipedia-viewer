@@ -27,6 +27,7 @@ function handleResponse(response) {
     arr.push(response[key]);
   }
   createList(arr);
+  document.getElementsByClassName('container')[0].style.marginTop = '2em';
 }
 function getUrl(id) {
   var searchTerm = document.getElementById(id).value,
