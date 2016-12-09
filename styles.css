@@ -6,10 +6,10 @@ body {
 .container {
   font-family: 'Open Sans', sans-serif;
   max-width: 960px;
-  min-width: 230px;
+  /* min-width: 230px; */
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20%;
+  margin-top: 18em;
   transition:         all .5s ease-in-out;
   -moz-transition:    all .5s ease-in-out;
   -o-transition:      all .5s ease-in-out;
@@ -44,7 +44,7 @@ input:focus {
 }
 
 .button {
-  margin: 2em 1em;
+  margin: 2em 0;
   font-family: 'Open Sans', sans-serif;
   padding: .8em 1em;
   border: solid 2px #D96F32;
@@ -93,4 +93,10 @@ h5 {
 }
 p {
   color: #090909;
+}
+
+@media (max-width: 420px){
+  .button {
+    display: block;
+  }
 }
